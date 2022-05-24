@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ex01.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:31:40 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/17 13:46:21 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:22:40 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,31 +132,46 @@ void	PhoneBook::PullContact(PhoneBook *book, int16_t i){
 void	PhoneBook::SearchContact(PhoneBook *book, int16_t j){
 		int i = 0;
 		while (i < j){
-		std::cout << book->contact[i].GetIndex() << '|';
-		std::cout << book->contact[i].GetName() << '|';
-		std::cout << book->contact[i].GetFamily() << '|';
-		std::cout << book->contact[i].GetNickName() << '|';
-		std::cout << book->contact[i].GetNumber() << '|';
-		std::cout << book->contact[i].GetDeepSecret() << '|';
-		std::cout << std::endl;
-		i++;
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetIndex() << '|';
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetName() << '|';
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetFamily() << '|';
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetNickName() << '|';
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetNumber() << '|';
+			std::cout << std::setw(10);
+			std::cout << book->contact[i].GetDeepSecret() << '|';
+			std::cout << std::endl;
+			i++;
 		}
 }
 
 int8_t	Search(PhoneBook *book, int16_t j){
 	std::string s;
 	int16_t i = -1;
+	
 	if (j > 8)
 		j = 8;
 	if (j == 0)
 		return (0);
 	book->SearchContact(book, j);
 	std::cout << "Please enter the index of the contact you wish to display: "  << std::endl;
-	std::cin >> i;
-	if (i < j && i >= 0 && i < 8)
+	getline(std::cin, s);
+	if (std::cin.eof())
 	{
-		book->PullContact(book, i);
+		std::cout << "CTR + D" << std::endl;
+		return (0);
 	}
+	else if (s.size() > 1 || s.size() < 0)
+		std::cout<< "Wrong Index" << std::endl;
+	else if (!isnumber(s[0]))
+			std::cout<< "Wrong Index" << std::endl;
+	i = atoi(s.c_str());
+	if (i < j && i >= 0 && i < 8)
+		book->PullContact(book, i);
 	else
 		std::cout << "Invalid Index" << std::endl;
 	return (1);
