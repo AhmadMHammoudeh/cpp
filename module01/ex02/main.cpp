@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:51:56 by ahhammou         ###   ########.fr       */
+/*   Created: 2022/05/25 02:09:32 by ahhammou          #+#    #+#             */
+/*   Updated: 2022/05/25 02:17:38 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
 #include <iostream>
-#include <cctype>
+#include <string>
 
-class Zombie
+int main()
 {
-	private:
-	std::string name;
-	public:
-	void	Announce(void);
-	void	GetName(void);
-	void	Nameing(std::string name);
-	~Zombie(){std::cout << this->name << " DIED" << std::endl;};
-};
-
-
-#endif
+	std::string s;
+	std::string *stringPTR;
+	std::string &stringREF = s;
+	s = "HI THIS IS BRAIN"; 
+	stringPTR = &s;
+	std::cout << s << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+}

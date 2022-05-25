@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:51:56 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/05/25 04:31:13 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
 #include <iostream>
 #include <cctype>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanA
 {
 	private:
-	std::string name;
+	Weapon *Wep;
+	std::string Name;
 	public:
-	void	Announce(void);
-	void	GetName(void);
-	void	Nameing(std::string name);
-	~Zombie(){std::cout << this->name << " DIED" << std::endl;};
+	HumanA(std::string name, Weapon wep);
+	void	attack();
 };
 
 

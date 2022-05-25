@@ -6,12 +6,12 @@
 #    By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/05/25 01:02:14 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/05/25 02:39:18 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= zombie
-SRCS		= ./Zombie.cpp ./main.cpp
+NAME		= Wep
+SRCS		= ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98

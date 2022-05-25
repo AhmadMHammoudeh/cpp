@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:51:56 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/05/25 04:38:54 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 #include <iostream>
 #include <cctype>
+#include "Weapon.hpp"
 
-class Zombie
+class HumanB
 {
 	private:
-	std::string name;
+	Weapon *Wep;
+	std::string Name;
 	public:
-	void	Announce(void);
-	void	GetName(void);
-	void	Nameing(std::string name);
-	~Zombie(){std::cout << this->name << " DIED" << std::endl;};
+	HumanB(std::string name);
+	void	attack();
+	void	setWeapon(Weapon wep);
 };
 
 

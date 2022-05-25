@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:51:56 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:53:26 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
 #include <iostream>
 #include <cctype>
+#include "Zombie.hpp"
 
-class Zombie
+class ZombieHorde
 {
 	private:
 	std::string name;
+	int size;
+	Zombie *zombies;
+	
 	public:
-	void	Announce(void);
-	void	GetName(void);
-	void	Nameing(std::string name);
-	~Zombie(){std::cout << this->name << " DIED" << std::endl;};
+	Zombie	*ZombieHord(int N, std::string name);
+	void	announce(void);
+	void	nameing(std::string name);
+	~ZombieHorde(){this->zombies->GetName(); std::cout <<" DIED" << std::endl;};
 };
 
 

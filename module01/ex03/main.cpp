@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:51:56 by ahhammou         ###   ########.fr       */
+/*   Created: 2022/05/25 03:34:13 by ahhammou          #+#    #+#             */
+/*   Updated: 2022/05/25 04:42:42 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <cctype>
-
-class Zombie
+int main()
 {
-	private:
-	std::string name;
-	public:
-	void	Announce(void);
-	void	GetName(void);
-	void	Nameing(std::string name);
-	~Zombie(){std::cout << this->name << " DIED" << std::endl;};
-};
-
-
-#endif
+	Weapon a = Weapon("club");
+	std::cout << a.getType() << std::endl;
+	HumanA bob("bob", a);
+	bob.attack();
+	a.setType("New club");
+	bob.attack();
+	
+	HumanB pop("pop");
+	pop.attack();
+	pop.setWeapon(a);
+	pop.attack();
+	
+}

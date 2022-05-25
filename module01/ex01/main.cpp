@@ -6,58 +6,55 @@
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:23 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/17 15:35:39 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/05/25 02:08:54 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 Zombie *newZombie(std::string name){
 	Zombie *add;
 
 	add = new Zombie;
-	add->nameing(name);
-	add->announce();
+	add->Nameing(name);
+	add->Announce();
 	return (add);
 }
 
-/*for checking 
-Zombie* zombieHorde( int N, std::string name )
+void	ZombieHorde::announce()
 {
-	int i;
-	std::string newname;
-	Zombie *hord[N];
-
-	i = 0;
-	while (i < N)
-	{
-		newname = name + std::to_string(i);
-		hord[i] = newZombie(name);
-		i++;
-	}
-	return (*hord);
+	std::cout << this->name << std::endl;
 }
-*/
 
-
-Zombie* zombieHorde( int N, std::string name )
+Zombie	*ZombieHorde::ZombieHord(int N, std::string name)
 {
 	int i;
-	Zombie *hord[N];
+	this->zombies = new Zombie[N];
 
 	i = 0;
 	while (i < N)
 	{
-		hord[i] = newZombie(name);
+		this->zombies[i] = *newZombie(name);
 		i++;
 	}
-	return (*hord);
+	return ((this)->zombies);
+}
+
+ZombieHorde *create(int n, std::string name)
+{
+	ZombieHorde *a;
+	Zombie *lead;
+	a = new ZombieHorde;
+	lead = a->ZombieHord(n, name);
+	lead->Announce();
+	return (a);
 }
 
 int main()
 {
-	Zombie *a;
+	ZombieHorde *a;
 	
-	a = zombieHorde(5, "ahmad");
-	a->~Zombie();
+	a = create(5, "ahmad");
+	a->~ZombieHorde();
 }
