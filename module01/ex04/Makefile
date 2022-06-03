@@ -6,12 +6,12 @@
 #    By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/05/31 13:34:45 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/05/31 13:43:46 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Wep
-SRCS		= ./main.cpp ./HumanA.cpp ./HumanB.cpp ./Weapon.cpp
+NAME		= sed
+SRCS		= ./main.cpp 
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
