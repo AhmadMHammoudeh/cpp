@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 01:53:26 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/09 05:41:49 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ZombieHorde
 	Zombie	*ZombieHord(int N, std::string name);
 	void	announce(void);
 	void	nameing(std::string name);
-	~ZombieHorde(){this->zombies->GetName(); std::cout <<" DIED" << std::endl;};
+	~ZombieHorde();
 };
 
 

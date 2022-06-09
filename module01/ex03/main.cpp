@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:34:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/05/25 04:42:42 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/09 06:02:23 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,20 @@
 int main()
 {
 	Weapon a = Weapon("club");
+	std::cout << "\033[1;33mThis is Wep"<<std::endl;
 	std::cout << a.getType() << std::endl;
 	HumanA bob("bob", a);
+	std::cout << "\033[1;32mThis is BOB Attack"<<std::endl;
 	bob.attack();
 	a.setType("New club");
+	std::cout << "\033[1;31mThis is BOB New Attack"<<std::endl;
 	bob.attack();
 	
+	std::cout << "\033[1;33mThis is POP Attack"<<std::endl;
 	HumanB pop("pop");
 	pop.attack();
 	pop.setWeapon(a);
+	std::cout << "\033[1;34mThis is POP Attack with Wep a (club)"<<std::endl;
 	pop.attack();
 	
 }

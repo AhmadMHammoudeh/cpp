@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 14:03:21 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/09 04:56:51 by ahhammou         ###   ########.fr       */
+/*   Created: 2022/05/31 13:44:51 by ahhammou          #+#    #+#             */
+/*   Updated: 2022/06/07 06:52:41 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <cctype>
 
-class Zombie
+int main(int argv, char **argc)
 {
-	private:
-	std::string name;
-	public:
-	void	announce(void);
-	void	nameing(std::string name);
-	~Zombie(void);
-};
-
-
-#endif
+	Harl h;
+	if (argv != 2)
+		std::cout << "Wrong number of args!" << std::endl;
+	else{
+		h.complain(argc[1]);
+	}
+}

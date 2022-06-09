@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/05/25 02:18:10 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/06/07 06:53:53 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OS	= $(shell uname)
 ifeq ($(OS), Linux)
 	C++			= g++
 else
-	C++			= clang++
+	C++			= c++
 endif
 
 .cpp.o:

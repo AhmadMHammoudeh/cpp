@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 13:44:51 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/03 02:02:33 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/09 06:05:17 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
+
+std::string the_replacer(std::string str, std::string s1, std::string s2)
+{
+	size_t found = str.find(s1.c_str());
+	while (found != std::string::npos)
+	{
+		str.erase(found, s1.length());
+		str.insert(found, s2);
+		found = str.find(s1.c_str(), found + 1);
+	}
+	return (str);
+}
 
 void	Sedder::replace(std::string &file, std::string &s1, std::string &s2)
 {
@@ -36,11 +48,8 @@ void	Sedder::replace(std::string &file, std::string &s1, std::string &s2)
 			break ;
 	}
 	out.open(replacename.c_str());
-	if (out.is_open())
-		std::cout << "is open";
+	final = the_replacer(final, s1, s2);
 	out << final;
-	std::cout << s1;
-	std::cout << s2;
 	this->in.close();
 	this->out.close();
 }
@@ -48,12 +57,18 @@ void	Sedder::replace(std::string &file, std::string &s1, std::string &s2)
 int main(int argv, char **argc)
 {
 	if (argv != 4)
-		std::cout << "Wrong number of args!" << std::endl;
+		std::cout << "\033[0;35m Wrong number of args!" << std::endl;
 	else{
 	std::string file(argc[1]);
 	std::string s1(argc[2]);
 	std::string s2(argc[3]);
 	Sedder rep;
-	rep.replace(file, s1, s2);
+	try{
+		rep.replace(file, s1, s2);
+	}
+	catch(std::exception err)
+	{
+		std::cout << "S1 not found" << std::endl;
+	}
 	}
 }
