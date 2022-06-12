@@ -18,6 +18,18 @@ Fixed::Fixed( const Fixed & src )
 	*this = src;
 }
 
+Fixed::Fixed( const int src )
+{
+	std::cout << "INT Constructor operator called" << std::endl;
+	this->cInt = src << fPoint;
+}
+
+Fixed::Fixed( const float src )
+{
+	std::cout << "FLOAT Constructor operator called" << std::endl;
+	this->cInt = roundf(src * (1 << fPoint));
+}
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -44,6 +56,11 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 	return *this;
 }
 
+std::ostream&
+operator <<(std::ostream &stream, const Fixed &fixed)
+{
+	return (stream << fixed.toFloat());
+}
 
 
 
@@ -58,14 +75,21 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return(this->cInt);
 }
 
 void Fixed::setRawBits(int const raw) 
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->cInt = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return(((float)this->cInt)/ (1<<fPoint));
+}
+float Fixed::toInt(void) const
+{
+	return((this->cInt)/ (1<<fPoint) );
 }
 
 /* ************************************************************************** */
