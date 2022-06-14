@@ -4,7 +4,6 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-const int Fixed::fPoint = 8;
 
 Fixed::Fixed()
 {

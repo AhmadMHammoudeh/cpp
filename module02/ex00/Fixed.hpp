@@ -18,7 +18,7 @@ class Fixed
 		void setRawBits( int const raw );
 	private:
 		int cInt;
-		static const int fPoint;
+		static const int fPoint = 8;
 };
 
 std::ostream &			operator<<( std::ostream & o, Fixed const & i );
