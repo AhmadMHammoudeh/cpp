@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/06/12 06:39:04 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/06/16 10:50:15 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Fixed
-SRCS		= ./Fixed.cpp ./main.cpp
+NAME		= ClapTrap
+SRCS		= ./ClapTrap.cpp ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -21,9 +21,6 @@ ifeq ($(OS), Linux)
 else
 	C++			= c++
 endif
-
-.cpp.o:
-	${C++} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 $(NAME): ${OBJS}
 	${C++} ${FLAGS} $(OBJS) -o $(NAME)

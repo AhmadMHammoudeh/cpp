@@ -4,8 +4,6 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-const int Fixed::fPoint = 8;
-
 Fixed::Fixed()
 {
 	this->cInt = 0;

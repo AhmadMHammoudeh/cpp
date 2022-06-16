@@ -19,11 +19,11 @@ class Fixed
 		Fixed &		operator=( Fixed const & rhs );
 		int getRawBits( void ) const;
 		float toFloat( void ) const;
-		float toInt( void ) const;
+		int toInt( void ) const;
 		void setRawBits( int const raw );
 	private:
 		int cInt;
-		static const int fPoint;
+		static const int fPoint = 8;
 };
 
 std::ostream &			operator<<( std::ostream & o, Fixed const & i );

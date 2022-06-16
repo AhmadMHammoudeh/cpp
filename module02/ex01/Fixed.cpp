@@ -4,8 +4,6 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-const int Fixed::fPoint = 8;
-
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -87,7 +85,7 @@ float Fixed::toFloat(void) const
 {
 	return(((float)this->cInt)/ (1<<fPoint));
 }
-float Fixed::toInt(void) const
+int Fixed::toInt(void) const
 {
 	return((this->cInt)/ (1<<fPoint) );
 }
