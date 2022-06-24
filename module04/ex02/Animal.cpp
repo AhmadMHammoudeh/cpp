@@ -1,25 +1,25 @@
-#include "WrongCat.hpp"
+#include "Animal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-WrongCat::WrongCat()
+Animal::Animal()
 {
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
-	setType("WrongCat");
+	this->type = "Animal";
 }
 
-WrongCat::WrongCat(std::string name)
+Animal::Animal(std::string name)
 {
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
-	setType("WrongCat");
+	this->type = "Animal";
 }
 
-WrongCat::WrongCat( const WrongCat & src )
+Animal::Animal( const Animal & src )
 {
 	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
-	setType("WrongCat");
+	this->type = "Animal";
 }
 
 
@@ -27,7 +27,7 @@ WrongCat::WrongCat( const WrongCat & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-WrongCat::~WrongCat()
+Animal::~Animal()
 {
 	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
 }
@@ -37,16 +37,13 @@ WrongCat::~WrongCat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongCat &				WrongCat::operator=( WrongCat const & rhs )
+Animal &				Animal::operator=( Animal const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	this->type = rhs.type;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
+std::ostream &			operator<<( std::ostream & o, Animal const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;
@@ -62,13 +59,13 @@ std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-void WrongCat::makeSound()
+std::string Animal::getType()
 {
-	time_t now = time(0);
-	if (now % 2 == 0)
-		std::cout << "Barrrrkkkkk!!!" << std::endl;
-	else
-		std::cout << "Did I meow?! I MEANT BAAARRKKKK!!!!!!" << std::endl;
+	return(type);
 }
 
+void Animal::setType(std::string type)
+{
+	this->type = type;
+}
 /* ************************************************************************** */

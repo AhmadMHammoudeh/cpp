@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/23 17:22:05 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:24:25 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
 # include "Brain.hpp"
 #define RED "\033[0;31m"
 #define GREEN "\033[1;32m"
@@ -23,25 +22,26 @@
 #define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
-class Cat : public Animal
+class Animal
 {
 
 	public:
 
-		Cat();
-		Cat(std::string name);
-		Cat( Cat const & src );
-		~Cat();
+		Animal();
+		Animal(std::string name);
+		Animal( Animal const & src );
+		~Animal();
 
-		Cat &		operator=( Cat const & rhs );
-		virtual void makeSound();
-		virtual void setIdea(std::string idea);
-		virtual std::string getIdea(int j);
-		int i = 0;
-	private:
-		Brain *brain;
+		Animal &		operator=( Animal const & rhs );
+		virtual void makeSound() = 0;
+		std::string getType();
+		void setType(std::string type);
+		virtual void setIdea(std::string idea) = 0;
+		virtual std::string getIdea(int j) = 0;
+		private:
+		std::string type;
 };
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
+std::ostream &			operator<<( std::ostream & o, Animal const & i );
 
 #endif /* ********************************************************** ANIMAL_H */

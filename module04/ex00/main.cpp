@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/20 14:34:25 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:01:59 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@
 
 int main()
 {
-	Cat cat("cat");
-	WrongCat Wrongmeow("wrongcat");
-	Dog dog("Dog");
-	cat.makeSound();
-	Wrongmeow.makeSound();
-	dog.makeSound();
+	// Cat cat("cat");
+	// WrongCat Wrongmeow("wrongcat");
+	// Dog dog("Dog");
+	Animal *cat = new Cat();
+	WrongAnimal *Wrongmeow = new WrongCat();
+	Animal *dog = new Dog();
+	
+	cat->makeSound();
+	Wrongmeow->makeSound();
+	dog->makeSound();
 }

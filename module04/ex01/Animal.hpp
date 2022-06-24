@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/20 14:33:40 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:23:17 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "Brain.hpp"
 #define RED "\033[0;31m"
 #define GREEN "\033[1;32m"
 #define CYAN "\033[3;36m"
@@ -35,7 +36,9 @@ class Animal
 		virtual void makeSound();
 		std::string getType();
 		void setType(std::string type);
-	private:
+		virtual void setIdea(std::string idea) = 0;
+		virtual std::string getIdea(int j) = 0;
+		private:
 		std::string type;
 };
 

@@ -13,11 +13,13 @@ Dog::Dog()
 Dog::Dog(std::string name)
 {
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	setType("Dog");
 }
 
 Dog::Dog( const Dog & src )
 {
 	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	setType("Dog");
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/20 14:17:49 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:22:18 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "Brain.hpp"
 # include "Animal.hpp"
 #define RED "\033[0;31m"
 #define GREEN "\033[1;32m"
@@ -34,7 +35,11 @@ class Dog : public Animal
 
 		Dog &		operator=( Dog const & rhs );
 		virtual void makeSound();
+		virtual void setIdea(std::string idea);
+		virtual std::string getIdea(int j);
+		int i = 0;
 	private:
+		Brain *brain;
 };
 
 std::ostream &			operator<<( std::ostream & o, Dog const & i );

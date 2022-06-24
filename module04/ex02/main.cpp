@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/23 17:24:13 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:58:03 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	Animal *j = new Cat();
+	Cat *j = new Cat();
 	// Dog dog("Dog");
 	j->makeSound();
 	j->setIdea("my Ideas");
@@ -27,7 +27,7 @@ int main()
 	std::cout << j->getIdea(1) << std::endl;
 	std::cout << j->getIdea(2) << std::endl;
 	Cat *catsecond = j;
-	// delete (j);
+	delete (j);
 	std::cout << catsecond->getIdea(0) << std::endl;
 	// std::cout << catsecond->getIdea(1) << std::endl;
 	// std::cout << catsecond->getIdea(2) << std::endl;
