@@ -67,6 +67,11 @@
 		"ios": "cpp",
 		"locale": "cpp",
 		"mutex": "cpp",
-		"ratio": "cpp"
+		"ratio": "cpp",
+		"__bits": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"stack": "cpp",
+		"variant": "cpp"
 	}
 }
