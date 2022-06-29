@@ -9,6 +9,7 @@ Cat::Cat()
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
 	setType("cat");
 	brain = new Brain();
+	i = 0;
 }
 
 Cat::Cat(std::string name)
@@ -16,13 +17,22 @@ Cat::Cat(std::string name)
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
 	setType("cat");
 	brain = new Brain();
+	i = 0;
 }
 
-Cat::Cat( const Cat & src )
+Cat::Cat( const Cat & src ):Animal()
 {
 	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
 	setType("cat");
 	brain = new Brain();
+	std::string temp;
+	i = 0;
+	while (i < 100)
+	{
+		temp = src.brain->getIdeas(i) ;
+		setIdea(temp);
+	}
+	i = 0;
 }
 
 
@@ -33,14 +43,14 @@ Cat::Cat( const Cat & src )
 Cat::~Cat()
 {
 	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	delete (brain);
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cat &Cat::operator=(Cat const &rhs)
 {
 	std::cout << CYAN << "The Equal Operator has been called !" << std::endl;
 	std::string temp;

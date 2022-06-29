@@ -56,7 +56,7 @@ void Brain::createIdeas(std::string idea, int i)
 
 std::string Brain::getIdeas(int j)
 {
-	std::cout << "Getting Ideas" << std::endl;
+	// std::cout << "Getting Ideas" << std::endl;
 	return(this->ideas[j]);
 }
 

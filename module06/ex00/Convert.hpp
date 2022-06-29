@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string>
-
+# include <limits>
 class Convert
 {
 
@@ -29,6 +29,8 @@ class Convert
 		operator double(void);
 	private:
 		std::string _type;
+		bool _spec;
+		bool _f;
 		std::string _input;
 		float _valuef;
 		int _valuei;

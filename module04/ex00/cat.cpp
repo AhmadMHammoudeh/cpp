@@ -29,7 +29,7 @@ Cat::Cat( const Cat & src )
 
 Cat::~Cat()
 {
-	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The CAT Destructor Has been Called !" << std::endl;
 }
 
 

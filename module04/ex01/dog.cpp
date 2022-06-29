@@ -9,6 +9,7 @@ Dog::Dog()
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
+	i = 0;
 }
 
 Dog::Dog(std::string name)
@@ -16,6 +17,7 @@ Dog::Dog(std::string name)
 	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
+	i = 0;
 }
 
 Dog::Dog( const Dog & src )
@@ -23,6 +25,14 @@ Dog::Dog( const Dog & src )
 	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
+	std::string temp;
+	i = 0;
+	while (i < 100)
+	{
+		temp = src.brain->getIdeas(i) ;
+		setIdea(temp);
+	}
+	i = 0;
 }
 
 
@@ -33,8 +43,8 @@ Dog::Dog( const Dog & src )
 Dog::~Dog()
 {
 	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	delete (brain);
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -42,6 +52,7 @@ Dog::~Dog()
 
 Dog &				Dog::operator=( Dog const & rhs )
 {
+	std::cout << CYAN << "The Equal Operator has been called !" << std::endl;
 	std::string temp;
 	i = 0;
 	while (i < 100)

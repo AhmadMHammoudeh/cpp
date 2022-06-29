@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/23 17:24:25 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:12:01 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,19 @@ class Animal
 
 		Animal();
 		Animal(std::string name);
-		Animal( Animal const & src );
-		~Animal();
+		Animal(Animal const &src);
+		virtual ~Animal();
 
-		Animal &		operator=( Animal const & rhs );
+		virtual Animal &	operator=( Animal const & rhs );
 		virtual void makeSound() = 0;
 		std::string getType();
 		void setType(std::string type);
-		virtual void setIdea(std::string idea) = 0;
-		virtual std::string getIdea(int j) = 0;
-		private:
+		virtual void setIdea(std::string idea);
+		virtual std::string getIdea(int j);
+		int i;
+	protected:
 		std::string type;
+		Brain *brain;
 };
 
 std::ostream &			operator<<( std::ostream & o, Animal const & i );

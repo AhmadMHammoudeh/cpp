@@ -29,7 +29,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
-	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The DOG Destructor Has been Called !" << std::endl;
 }
 
 

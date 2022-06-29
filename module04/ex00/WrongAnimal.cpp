@@ -29,7 +29,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal & src )
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The WRONGANIMAL Destructor Has been Called !" << std::endl;
 }
 
 

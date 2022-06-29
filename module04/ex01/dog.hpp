@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/23 17:22:18 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:16:34 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Dog : public Animal
 		virtual void makeSound();
 		virtual void setIdea(std::string idea);
 		virtual std::string getIdea(int j);
-		int i = 0;
+		int i ;
 	private:
 		Brain *brain;
 };

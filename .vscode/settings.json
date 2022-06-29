@@ -72,6 +72,7 @@
 		"compare": "cpp",
 		"concepts": "cpp",
 		"stack": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"filesystem": "cpp"
 	}
 }

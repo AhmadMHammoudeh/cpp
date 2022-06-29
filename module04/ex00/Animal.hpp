@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/20 14:33:40 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/27 21:52:29 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Animal
 		Animal();
 		Animal(std::string name);
 		Animal( Animal const & src );
-		~Animal();
+		virtual ~Animal();
 
 		Animal &		operator=( Animal const & rhs );
 		virtual void makeSound();

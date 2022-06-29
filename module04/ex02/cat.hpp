@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:01:14 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/23 16:09:06 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:56:21 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ class Cat : public Animal
 
 		Cat &		operator=( Cat const & rhs );
 		virtual void makeSound();
-		void setIdea(std::string idea);
-		std::string getIdea(int j);
-		int i = 0;
+		virtual void setIdea(std::string idea);
+		virtual std::string getIdea(int j);
+		int i;
 	private:
 		Brain *brain;
 };
