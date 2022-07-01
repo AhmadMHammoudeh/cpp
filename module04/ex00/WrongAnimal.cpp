@@ -6,19 +6,19 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Animal Constructor Has been Called !" << std::endl;
 	this->type = "Animal";
 }
 
 WrongAnimal::WrongAnimal(std::string name)
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Animal Constructor Has been Called !" << std::endl;
 	this->type = "Animal";
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
-	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Animal Copy Constructor Has been Called !" << std::endl;
 	this->type = "WrongAnimal";
 }
 

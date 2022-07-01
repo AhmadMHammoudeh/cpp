@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/27 17:19:03 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/06/29 21:03:24 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main()
 	// {
 	// 	delete (animal[i]);
 	// }
-	Cat* j = new Cat();
+	Animal *anim = new Animal();
+	Cat *j = new Cat();
 	// Dog dog("Dog");
 	j->makeSound();
 	j->setIdea("my Ideas");

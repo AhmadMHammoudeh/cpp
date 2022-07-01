@@ -6,19 +6,19 @@
 
 Animal::Animal()
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Animal Constructor Has been Called !" << std::endl;
 	this->type = "Animal";
 }
 
 Animal::Animal(std::string name)
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Animal string Constructor Has been Called !" << std::endl;
 	this->type = "Animal";
 }
 
 Animal::Animal( const Animal & src )
 {
-	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Animal Copy Constructor Has been Called !" << std::endl;
 	this->type = "Animal";
 }
 

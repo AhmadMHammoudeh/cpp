@@ -6,19 +6,19 @@
 
 WrongCat::WrongCat()
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Cat Constructor Has been Called !" << std::endl;
 	setType("WrongCat");
 }
 
 WrongCat::WrongCat(std::string name)
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Cat Constructor Has been Called !" << std::endl;
 	setType("WrongCat");
 }
 
 WrongCat::WrongCat( const WrongCat & src )
 {
-	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Cat Copy Constructor Has been Called !" << std::endl;
 	setType("WrongCat");
 }
 
@@ -29,7 +29,7 @@ WrongCat::WrongCat( const WrongCat & src )
 
 WrongCat::~WrongCat()
 {
-	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Wrong Cat Destructor Has been Called !" << std::endl;
 }
 
 

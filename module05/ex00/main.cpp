@@ -5,25 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/10 23:41:30 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/30 14:26:46 by ahhammou         ###   ########.fr       */
+/*   Created: 2022/07/01 12:10:29 by ahhammou          #+#    #+#             */
+/*   Updated: 2022/07/01 16:30:37 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	// Fixed a;
-	// a.setRawBits(7);
-	// std::cout <<a.getRawBits() << std::endl;
-	// Fixed b = Fixed(a);
-	// std::cout <<b.getRawBits() << std::endl;
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	try{
+	Bureaucrat *a = new Bureaucrat("Ahmad", 10);
+	Bureaucrat b = Bureaucrat("Ahmad", 1);
+
+	std::cout << *a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << a->getName() << std::endl;
+	std::cout << a->getGrade() << std::endl;
+	a->decreGrade();
+	std::cout << a->getGrade() << std::endl;
+	a->increGrade();
+	std::cout << a->getGrade() << std::endl;
+	b.increGrade();
+	std::cout << b.getGrade() << std::endl;
+	b.decreGrade();
+	std::cout << b.getGrade() << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

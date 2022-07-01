@@ -6,7 +6,7 @@
 
 Dog::Dog()
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Dog Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
 	i = 0;
@@ -14,7 +14,7 @@ Dog::Dog()
 
 Dog::Dog(std::string name)
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Dog Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
 	i = 0;
@@ -22,7 +22,7 @@ Dog::Dog(std::string name)
 
 Dog::Dog( const Dog & src )
 {
-	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Dog Copy Constructor Has been Called !" << std::endl;
 	setType("Dog");
 	brain = new Brain();
 	std::string temp;
@@ -42,7 +42,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
-	std::cout << CYAN << "The Destructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Dog Destructor Has been Called !" << std::endl;
 	delete (brain);
 }
 

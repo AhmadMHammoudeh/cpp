@@ -21,6 +21,7 @@ Brain::Brain( const Brain & src )
 
 Brain::~Brain()
 {
+	std::cout << "a brain has been DESTROYED" << std::endl;
 }
 
 

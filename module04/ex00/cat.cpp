@@ -6,19 +6,19 @@
 
 Cat::Cat()
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Cat Constructor Has been Called !" << std::endl;
 	setType("cat");
 }
 
 Cat::Cat(std::string name)
 {
-	std::cout << CYAN << "The Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Cat Constructor Has been Called !" << std::endl;
 	setType("cat");
 }
 
 Cat::Cat( const Cat & src )
 {
-	std::cout << CYAN << "The Copy Constructor Has been Called !" << std::endl;
+	std::cout << CYAN << "The Cat Copy Constructor Has been Called !" << std::endl;
 	setType("cat");
 }
 
