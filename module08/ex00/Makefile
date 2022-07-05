@@ -6,12 +6,12 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/07/05 00:45:38 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/06/29 13:03:32 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Bureaucrat
-SRCS		= ./Bureaucrat.cpp ./main.cpp ./Form.cpp ./ShrubberyCreationForm.cpp ./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp
+NAME		= Temps
+SRCS		=  ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -29,10 +29,7 @@ all: $(NAME)
     
 fclean: clean
 	$(RM) $(NAME)
-
-fclean+: fclean
-	$(RM) $(SHRUB)
-	    
+    
 clean:
 	$(RM) -f $(OBJS) $(OBJS_B)
     

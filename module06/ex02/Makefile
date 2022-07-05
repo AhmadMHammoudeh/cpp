@@ -6,15 +6,15 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/06/28 14:40:23 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/05 15:01:39 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= Convert
-SRCS		= ./Base.cpp ./Classes.cpp ./main.cpp
+SRCS		= ./Base.cpp ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 OS	= $(shell uname)
 ifeq ($(OS), Linux)
 	C++			= g++

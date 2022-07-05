@@ -65,9 +65,9 @@ bool Form::getSign() const
 }
 bool Form::beSigned(Bureaucrat &b)
 {
-	// std::cout << b.getGrade() << "     " <<  getGradeSign()<< std::endl;
 	if (b.getGrade() > getGradeSign())
 		throw GradeTooLowException();
+	std::cout << "The Bureaucrat signed the "<< b.getName()<< std::endl;
 	sign = 1;
 	return (sign);
 }

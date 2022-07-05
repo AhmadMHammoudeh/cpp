@@ -39,10 +39,10 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		this->grade = rhs.getGrade();
+	}
 	return *this;
 }
 
@@ -87,7 +87,6 @@ void	Bureaucrat::decreGrade()
 
 void	Bureaucrat::signForm(Form &f)
 {
-	char *temp;
 	try
 	{
 		f.beSignedSilent(*this);

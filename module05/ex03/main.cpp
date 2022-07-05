@@ -6,12 +6,13 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:29 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/05 00:23:11 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/05 14:35:49 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -39,10 +40,21 @@ int main()
 	// j.execute(b);
 	// RobotomyRequestForm d= RobotomyRequestForm("New");
 	// d.execute(b);
-	ShrubberyCreationForm n = ShrubberyCreationForm("New");
-	// n.execute(b);
-	n.beSigned(b);
-	a->signForm(n);
+	try
+	{
+		Intern i;
+		i.makeForm("Shrubbery Cration", "New");
+		Form *n = i.makeForm("Shrubbery Creation", "New");
+		if (n){
+		a->signForm(*n);
+		n->beSigned(b);
+		n->execute(b);
+	}
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	}
 	catch(std::exception &e)
 	{

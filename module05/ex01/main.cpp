@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:29 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/01 18:23:48 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/04 21:14:43 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main()
 	// std::cout << b.getGrade() << std::endl;
 
 	Form n = Form("New", 10, 10);
+	// a->signForm(n);
 	n.beSigned(b);
-	a->signForm(n);
 	}
 	catch(std::exception &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/29 11:06:31 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:07:11 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	identify(Base &base)
 Base *generate(void)
 {
 	time_t now = time(0);
-	if (now % 6 == 0)
+	if (now % 3 == 0)
 		// std::cout << "A" << std::endl;
 	{
 		ClassA *a = new ClassA();
 		return (a);
 	}
-	else if (now % 3 == 0)
+	else if (now % 3 == 1)
 	{
 		ClassC *c = new ClassC();
 		return (c);
@@ -81,7 +81,7 @@ Base *generate(void)
 	}
 }
 
-int main(int argv, char *argc[])
+int main()
 {
 	Base *base;
 	base = generate();
