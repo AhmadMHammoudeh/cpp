@@ -10,8 +10,8 @@ Intern::Intern()
 
 Intern::Intern( const Intern & src )
 {
+	*this = src;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -28,17 +28,14 @@ Intern::~Intern()
 
 Intern &				Intern::operator=( Intern const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, Intern const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
+	if ( this != &rhs )
+	{
+		return *this;
+	}
+	else
+	{
+		return *this;
+	}
 }
 
 
@@ -54,7 +51,7 @@ Form *Intern::makeForm(char const *s, char const *f)
 	{
 		for (int i = 0; i < 3; i++)
 			if (lvls[i] == s)
-				return (this->*(levels[i]))(s);
+				return (this->*(levels[i]))(f);
 		throw FormNotFound();
 	}
 	catch(std::exception &e)

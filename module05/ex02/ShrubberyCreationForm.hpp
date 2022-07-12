@@ -21,7 +21,7 @@ class ShrubberyCreationForm : public Form
 		virtual void execute(Bureaucrat const &executor);
 		class GradeTooLowException : public std::exception
 		{
-			const char *what() const throw() { return(CYAN"Grade too low to execute or the form is not signed off!"RESET); };
+			const char *what() const throw() { return(CYAN "Grade too low to execute or the form is not signed off!" RESET); };
 		};
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 		
@@ -30,6 +30,5 @@ class ShrubberyCreationForm : public Form
 		std::string target;
 };
 
-std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */

@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(const char *n, int g): name(n), grade(g)
 		throw(GradeTooLowException());
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src )
+Bureaucrat::Bureaucrat( const Bureaucrat & src ): name(src.getName())
 {
 	std::cout << RED " The Copy Constructor is Called" RESET<< std::endl;
 	*this = src;
@@ -39,10 +39,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	grade = rhs.grade;
 	return *this;
 }
 
@@ -87,7 +84,6 @@ void	Bureaucrat::decreGrade()
 
 void	Bureaucrat::signForm(Form &f)
 {
-	char *temp;
 	try
 	{
 		f.beSignedSilent(*this);

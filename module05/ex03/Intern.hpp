@@ -24,11 +24,10 @@ class Intern
 		Form *makePres(const char *s){ return (new PresidentialPardonForm(s)); };
 		class FormNotFound : public std::exception
 		{
-			const char *what() const throw() { return(CYAN"Form Not Found"RESET); };
+			const char *what() const throw() { return(CYAN "Form Not Found" RESET); };
 		};
 	private:
 };
 
-std::ostream &			operator<<( std::ostream & o, Intern const & i );
 
 #endif /* ********************************************************** INTERN_H */

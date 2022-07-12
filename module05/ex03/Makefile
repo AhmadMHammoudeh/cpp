@@ -6,7 +6,7 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/07/05 14:57:04 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/06 01:38:07 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= Bureaucrat
 SRCS		= ./Bureaucrat.cpp ./main.cpp ./Intern.cpp ./Form.cpp ./ShrubberyCreationForm.cpp ./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SHRUB		= *_shrubbery
 OS	= $(shell uname)
 ifeq ($(OS), Linux)

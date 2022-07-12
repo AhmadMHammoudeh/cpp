@@ -35,6 +35,9 @@ Form::~Form()
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
 	o << "Form Name : " << i.getName() << std::endl;
+	o << "Form State : " << i.getSign() << std::endl;
+	o << "Form Grade Sign : " << i.getGradeSign() << std::endl;
+	o << "Form Grade Exec : " << i.getGradeExec() << std::endl;
 	return o;
 }
 
@@ -67,7 +70,7 @@ bool Form::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() > getGradeSign())
 		throw GradeTooLowException();
-	std::cout << "The Bureaucrat signed the "<< b.getName()<< std::endl;
+	std::cout << "The Bureaucrat signed the "<< getName()<< std::endl;
 	sign = 1;
 	return (sign);
 }

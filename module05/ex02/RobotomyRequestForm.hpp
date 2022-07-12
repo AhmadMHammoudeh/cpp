@@ -22,13 +22,12 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 		class GradeTooLowException : public std::exception
 		{
-			const char *what() const throw() { return(CYAN"Grade too low to execute or the form is not signed off!"RESET); };
+			const char *what() const throw() { return(CYAN "Grade too low to execute or the form is not signed off!" RESET); };
 		};
 	private:
 		RobotomyRequestForm();
 		std::string target;
 };
 
-std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i );
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */

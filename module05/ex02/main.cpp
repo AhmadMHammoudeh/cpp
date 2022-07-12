@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:29 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/05 00:23:11 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/06 19:54:23 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 int main()
 {
-	try{
 	Bureaucrat *a = new Bureaucrat("Ahmad", 20);
+	try{
 	Bureaucrat b = Bureaucrat("Ahmad", 10);
 
 	std::cout << *a << std::endl;
@@ -35,17 +35,22 @@ int main()
 	// b.decreGrade();
 	// std::cout << b.getGrade() << std::endl;
 
-	// PresidentialPardonForm j= PresidentialPardonForm("New");
-	// j.execute(b);
-	// RobotomyRequestForm d= RobotomyRequestForm("New");
-	// d.execute(b);
+	PresidentialPardonForm j= PresidentialPardonForm("New");
+	RobotomyRequestForm d= RobotomyRequestForm("New");
 	ShrubberyCreationForm n = ShrubberyCreationForm("New");
 	// n.execute(b);
 	n.beSigned(b);
 	a->signForm(n);
+	j.beSigned(b);
+	a->signForm(j);
+	d.beSigned(b);
+	a->signForm(d);
+	j.execute(b);
+	d.execute(b);
 	}
 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	delete (a);
 }

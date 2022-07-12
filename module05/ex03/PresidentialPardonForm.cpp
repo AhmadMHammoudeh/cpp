@@ -34,14 +34,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
-
+	target = rhs.target;
 	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
 }
 
 

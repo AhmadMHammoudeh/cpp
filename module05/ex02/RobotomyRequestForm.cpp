@@ -34,14 +34,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
-
+	target = rhs.target;
 	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
 }
 
 

@@ -23,7 +23,7 @@ class Form
 		Form();
 		Form( const char *n, int e, int s);
 		Form( Form const & src );
-		~Form();
+		virtual ~Form();
 
 		class GradeTooHighException : public std::exception
 		{
@@ -43,10 +43,10 @@ class Form
 		virtual void execute(Bureaucrat const &executor) = 0;
 
 	private:
+		int const grade_exec;
+		int const grade_sign;
 		std::string const name;
 		bool sign;
-		int const grade_sign;
-		int const grade_exec;
 		
 };
 

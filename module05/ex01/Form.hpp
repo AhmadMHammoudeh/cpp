@@ -37,10 +37,10 @@ class Form
 		bool beSigned(Bureaucrat &b);
 
 	private:
+		int const grade_exec;
+		int const grade_sign;
 		std::string const name;
 		bool sign;
-		int const grade_sign;
-		int const grade_exec;
 		
 };
 

@@ -22,13 +22,12 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 		class GradeTooLowException : public std::exception
 		{
-			const char *what() const throw() { return(CYAN"Grade too low to execute or the form is not signed off!"RESET); };
+			const char *what() const throw() { return(CYAN "Grade too low to execute or the form is not signed off!" RESET); };
 		};
 	private:
 		PresidentialPardonForm();
 		std::string target;
 };
 
-std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i );
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H */
