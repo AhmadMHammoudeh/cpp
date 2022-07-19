@@ -6,11 +6,11 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/07/05 15:01:39 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/14 16:47:04 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Convert
+NAME		= RealType
 SRCS		= ./Base.cpp ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
@@ -23,7 +23,7 @@ else
 endif
 
 $(NAME): ${OBJS}
-	${C++} ${FLAGS} $(OBJS) -o $(NAME)
+	${C++} ${CXXFLAGS} $(OBJS) -o $(NAME)
 
 all: $(NAME)
     

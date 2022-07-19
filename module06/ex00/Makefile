@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahhammou <ahhammou@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/06/25 17:03:53 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/14 15:49:17 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= Convert
 SRCS		= ./Convert.cpp ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 OS	= $(shell uname)
 ifeq ($(OS), Linux)
 	C++			= g++
@@ -23,7 +23,7 @@ else
 endif
 
 $(NAME): ${OBJS}
-	${C++} ${FLAGS} $(OBJS) -o $(NAME)
+	${C++} ${CXXFLAGS} $(OBJS) -o $(NAME)
 
 all: $(NAME)
     

@@ -6,7 +6,7 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/06/14 19:45:33 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/17 21:30:47 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= Fixed
 SRCS		= ./Fixed.cpp ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= 
 OS	= $(shell uname)
 ifeq ($(OS), Linux)
 	CXX			= g++

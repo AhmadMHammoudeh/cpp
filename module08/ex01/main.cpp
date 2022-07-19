@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:27:19 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/12 00:21:57 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/18 14:15:37 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 int main()
 {
 	Span sp = Span(5);
+	Span sp2 = Span(10000);
 	// sp.addNumber(1);
 	try
 	{
-		sp.addNumber(100, 10000);
-		std::cout << sp.longestSpan() << std::endl;
+		sp2.addNumber(100, 10000);
+		std::cout << sp2.longestSpan() << std::endl;
 		// std::cout << sp.shortestSpan() << std::endl;
 	}
 	catch (std::exception &e){

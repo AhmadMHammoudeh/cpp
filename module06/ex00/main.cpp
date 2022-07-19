@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/29 10:57:51 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:39:14 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,46 @@ int main(int argv, char **argc)
 {
 	if (argv == 2)
 	{
+		std::string type;
 		std::string str = argc[1];
-		float t = std::atof(str.c_str());
-		std::cout << t << std::endl;
-		// Convert c1;
-		Convert c2(t);
-		// Convert c3(3.14);
-		// Convert c4(3);
-		// Convert c5 = c2;
-		c2.getValues();
-		// c2.~Convert();
-		// c5.~Convert();
-		// str.~basic_string();
-		// delete (&t);
-		// std::cout << c2.getValue() << std::endl;
-		// std::cout << c2.getValuei() << std::endl;
-		// std::cout << c2.getValue() << ".0f"<< std::endl;
-		// if (!c2.getValuec())
-		// 	std::cout << "Non Displayable Character" << std::endl;
-		// else
-		// 	std::cout << c2.getValuec() << std::endl;
-		// std::cout << c2.getValue() << std::endl;
-		// std::cout << c3.getValue() << std::endl;
-		// std::cout << c4.getValue() << std::endl;
-		// std::cout << c5.getValue() << std::endl;
+		if (strrchr(argc[1], 'f') && (argc[1][0] >= '0' && argc[1][0] <= '9') )
+		{
+			type = "float";
+			float t = std::atof(str.c_str());
+			Convert c2(t, type);
+			std::cout <<c2.getType() << " : " << c2.getInput() << std::endl;
+			c2.getValues();
+		}
+		else if (strrchr(argc[1], '.') &&  (argc[1][0] >= '0' && argc[1][0] <= '9'))
+		{
+			type = "double";
+			float t = std::atof(str.c_str());
+			Convert c2(t, type);
+			std::cout <<c2.getType() << " : " << c2.getInput() << std::endl;
+			c2.getValues();
+		}
+		else if(((argc[1][0] >= 'a' && argc[1][0] <= 'z') ||( argc[1][0] >= 'A' && argc[1][0] <= 'Z')) && !argc[1][1])
+		{
+			char c = argc[1][0];
+			type = "char";
+			Convert c2(c, type);
+			std::cout <<c2.getType() << " : " << c2.getInput() << std::endl;
+			c2.getValues();
+		}
+		else if(((argc[1][0] >= 'a' && argc[1][0] <= 'z') || (argc[1][0] >= 'A' && argc[1][0] <= 'Z')) && argc[1][1])
+		{
+			Convert c2(argc[1], "string");
+			std::cout <<c2.getType() << " : " << c2.getInput() << std::endl;
+			c2.getValues();
+		}
+		else
+		{
+			int t = std::atoi(str.c_str());
+			type = "int";
+			Convert c2(t, type);
+			std::cout <<c2.getType() << " : " << c2.getInput() << std::endl;
+			c2.getValues();
+		}
 	}
 	return (0);
 }

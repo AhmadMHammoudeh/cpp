@@ -17,6 +17,9 @@ Span::Span(unsigned int N)
 
 Span::Span( const Span & src )
 {
+	this->arr = src.arr;
+	size = src.size;
+	c = src.c;
 }
 
 
@@ -35,16 +38,14 @@ Span::~Span()
 
 Span &				Span::operator=( Span const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	this->arr = rhs.arr;
+	size = rhs.size;
+	c = rhs.c;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Span const & i )
+std::ostream &			operator<<( std::ostream & o, Span & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "Longest Span = " << i.longestSpan() <<"Shortest Span = " << i.shortestSpan() ;
 	return o;
 }
 

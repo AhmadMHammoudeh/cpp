@@ -6,15 +6,15 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/06/28 13:19:56 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/14 15:49:23 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Convert
+NAME		= Serial
 SRCS		= ./main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 OS	= $(shell uname)
 ifeq ($(OS), Linux)
 	C++			= g++
@@ -23,7 +23,7 @@ else
 endif
 
 $(NAME): ${OBJS}
-	${C++} ${FLAGS} $(OBJS) -o $(NAME)
+	${C++} ${CXXFLAGS} $(OBJS) -o $(NAME)
 
 all: $(NAME)
     

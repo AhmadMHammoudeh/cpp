@@ -17,6 +17,9 @@ Span::Span(unsigned int N)
 
 Span::Span( const Span & src )
 {
+	this->arr = src.arr;
+	size = src.size;
+	c = src.c;
 }
 
 
@@ -35,16 +38,15 @@ Span::~Span()
 
 Span &				Span::operator=( Span const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	this->arr = rhs.arr;
+	size = rhs.size;
+	c = rhs.c;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Span const & i )
+std::ostream &			operator<<( std::ostream & o, Span & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "Longest Span = " << i.longestSpan() <<"Shortest Span = " << i.shortestSpan() ;
 	return o;
 }
 
@@ -68,11 +70,11 @@ void Span::addNumber(int num, int amount)
 			break;
 		}
 	}
-	std::cout << j << std::endl;
+	// std::cout << j << std::endl;
 	std::fill_n(std::back_inserter(arr), j, num);
 	if (j < amount)
 		throw std::out_of_range("You cannot add more than the array size!");
-	printList();
+	// printList();
 }
 void Span::addNumber(int num)
 {

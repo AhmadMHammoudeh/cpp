@@ -51,7 +51,10 @@ Form *Intern::makeForm(char const *s, char const *f)
 	{
 		for (int i = 0; i < 3; i++)
 			if (lvls[i] == s)
+			{
+				std::cout << GREEN "Intern Created a " << lvls[i] << " Form" RESET<< std::endl;
 				return (this->*(levels[i]))(f);
+			}
 		throw FormNotFound();
 	}
 	catch(std::exception &e)

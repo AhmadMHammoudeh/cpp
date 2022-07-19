@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(const char *n, int g): name(n), grade(g)
 {
 	std::cout << RED" The Constructor with Params is Called" RESET<< std::endl;
 	if (grade < 1)
-		throw(GradeTooLowException());
+		throw(GradeTooHighException());
 	if (grade > 150)
 		throw(GradeTooLowException());
 }
@@ -95,4 +95,16 @@ void	Bureaucrat::signForm(Form &f)
 	}
 }
 
+void	Bureaucrat::executeForm(Form &f)
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << name << " Executed " << f.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << name << " Couldnt Execute " << f.getName() << " Because level too low "<<std::endl;
+	}
+}
 /* ************************************************************************** */

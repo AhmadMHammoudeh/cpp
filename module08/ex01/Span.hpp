@@ -21,6 +21,8 @@ class Span
 		void addNumber(int num, int amount);
 		int shortestSpan();
 		int	longestSpan();
+		int shortestSpan() const;
+		int	longestSpan() const;
 		void printList();
 		Span &operator=(Span const &rhs);
 
@@ -31,6 +33,6 @@ class Span
 		Span();
 };
 
-std::ostream &			operator<<( std::ostream & o, Span const & i );
+std::ostream &			operator<<( std::ostream & o, Span & i );
 
 #endif /* ************************************************************ SPAN_H */

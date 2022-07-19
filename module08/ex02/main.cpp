@@ -6,48 +6,36 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:27:19 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/12 00:21:57 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/18 16:58:08 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
 
 int main()
 {
-	Span sp = Span(5);
-	// sp.addNumber(1);
-	try
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	mstack.push(5);
+	mstack.push(15);
+	mstack.push(115);
+	mstack.push(1115);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	std::cout << *it << std::endl;
+	while (it != ite)
 	{
-		sp.addNumber(100, 10000);
-		std::cout << sp.longestSpan() << std::endl;
-		// std::cout << sp.shortestSpan() << std::endl;
+	std::cout << *it << std::endl;
+	++it;
 	}
-	catch (std::exception &e){
-		std::cout<< e.what() << std::endl;
-	}
-	// // try
-	// // {
-	// // 	// std::cout << sp.longestSpan() << std::endl;
-	// // 	std::cout << sp.shortestSpan() << std::endl;
-	// // }
-	// // catch (std::exception &e){
-	// // 	std::cout<< e.what() << std::endl;
-	// // }
-	// // sp.addNumber(20);
-	// // sp.addNumber(30);
-	// // sp.addNumber(40);
-	// // sp.addNumber(6);
-	// sp.addNumber(50);
-	// std::cout << sp.longestSpan() << std::endl;
-	// std::cout << sp.shortestSpan() << std::endl;
-	// Span sp = Span(5);
-sp.addNumber(6);
-sp.addNumber(3);
-sp.addNumber(17);
-sp.addNumber(9);
-sp.addNumber(11);
-// sp.printList();
-std::cout << sp.shortestSpan() << std::endl;
-std::cout << sp.longestSpan() << std::endl;
-	return 0;
+	std::cout << *ite << std::endl;
 }

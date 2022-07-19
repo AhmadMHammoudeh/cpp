@@ -10,49 +10,56 @@ Convert::Convert()
 	_input = "";
 }
 
-Convert::Convert(float f)
+Convert::Convert(float f, std::string type)
 {
-	_type = "float";
+	_type =type;
 	_valuei =static_cast<int>(f);
-	_input = f;
-	_valuef = f;
-	_valuec = f;
-	_valued = static_cast<double>(f);
-}
-
-Convert::Convert(double f)
-{
-	_type = "double";
-	_valuei = (f);
-	_valued = f;
-	_valuec = f;
+	_input = std::to_string(f) ;
 	_valuef = static_cast<float>(f);
-	_input = f;
+	_valuec = static_cast<char>(f);
+	_valued = static_cast<double>(f);
+	_spec = 0;
 }
 
-Convert::Convert(int f)
+Convert::Convert(double f, std::string type)
 {
-	_type = "int";
-	_valuei = f;
-	_valuec = f;
+	_type = type;
+	_valuei = static_cast<int>(f);
+	_valued = static_cast<double>(f);
+	_valuec = static_cast<char>(f);
+	_valuef = static_cast<float>(f);
+	_input = std::to_string(f);
+	_spec = 0;
+}
+
+Convert::Convert(int f, std::string type)
+{
+	_type = type;
+	_valuei = static_cast<int>(f);
+	_valuec = static_cast<char>(f);
 	_valued = static_cast<double>(f);
 	_valuef = static_cast<float>(f);
-	_input = f;
+	_input = std::to_string(f);
+	_spec = 0;
 }
 
-Convert::Convert(char f)
+Convert::Convert(char f, std::string type)
 {
-	_type = "int";
+	_type = type;
 	_valuei = static_cast<int>(f);
 	_valued = static_cast<double>(f);
 	_valuef = static_cast<float>(f);
-	_valuec = f;
+	_valuec = static_cast<char>(f);
+	_spec = 0;
 	_input = f;
 }
 
-Convert::Convert(std::string f)
+Convert::Convert(std::string f, std::string type)
 {
-	_type = "string";
+	if (type != "string")
+		_type = "string";
+	else
+		_type = type;
 	_input = f;
 
 	std::string codes[6] = {"-inf", "+inf", "nan", "-inff", "+inff", "nanf"};
@@ -74,7 +81,7 @@ Convert::Convert(std::string f)
 		}
 	}
 	// std::cout << _type << std::endl;
-	// exit(0);
+	exit(0);
 }
 
 Convert::Convert( const Convert & rhs )
@@ -168,6 +175,14 @@ int Convert::getValuei(void) const
 {
 	return _valuei;
 }
+std::string Convert::getInput(void) const
+{
+	return _input;
+}
+std::string Convert::getType(void) const
+{
+	return _type;
+}
 char Convert::getValuec(void) const
 {
 	// std::cout << _valuec << std::endl;
@@ -178,7 +193,7 @@ char Convert::getValuec(void) const
 
 void Convert::getValues(void)
 {
-	if (_spec)
+	if (_spec == 1)
 	{
 		std::cout << "Char : " <<  "Impossible" << std::endl;
 		std::cout << "Int : " <<  "Impossible" << std::endl;
@@ -203,14 +218,14 @@ void Convert::getValues(void)
 		std::cout << "Int : " << "Impossible" << std::endl;
 	else
 		std::cout <<"Int : " <<  getValuei() << std::endl;
-	if (_type == "float" || _type == "double")
-		std::cout <<"Float : " <<  getValuef() << "f" << std::endl;
+	if (strrchr(_input.c_str(), '.') == NULL || getValuei() == getValuef())
+		std::cout <<"Float : " <<  getValuef() << ".0f" << std::endl;
 	else
-		std::cout << "Float : " << getValuef() << ".0f" << std::endl;
-	if (_type == "float" || _type == "double")
-		std::cout <<"Double : " <<  getValue() << std::endl;
-	else
+		std::cout << "Float : " << getValuef() << "f" << std::endl;
+	if (strrchr(_input.c_str(), '.') == NULL || getValuei() == getValuef())
 		std::cout << "Double : " << getValue() << ".0" << std::endl;
+	else
+		std::cout <<"Double : " <<  getValue() << std::endl;
 		
 }
 

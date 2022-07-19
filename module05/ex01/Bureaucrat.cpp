@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(const char *n, int g): name(n), grade(g)
 {
 	std::cout << RED" The Constructor with Params is Called" RESET<< std::endl;
 	if (grade < 1)
-		throw(GradeTooLowException());
+		throw(GradeTooHighException());
 	if (grade > 150)
 		throw(GradeTooLowException());
 }
@@ -70,7 +70,7 @@ int Bureaucrat::getGrade()
 void	Bureaucrat::increGrade()
 {
 	if (grade - 1 == 0)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	grade -= 1;
 }
 

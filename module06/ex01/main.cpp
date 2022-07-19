@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 10:46:13 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/06/29 11:00:38 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:49:37 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Data *deserialize(uintptr_t ptr)
 	return (reinterpret_cast<Data *>(ptr));
 }
 
-int main(int argv, char *argc[])
+int main()
 {
 	uintptr_t u;
 	Data *d = new Data;

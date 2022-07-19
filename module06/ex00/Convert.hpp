@@ -10,11 +10,11 @@ class Convert
 	public:
 
 		Convert();
-		Convert(float f);
-		Convert(double f);
-		Convert(int f);
-		Convert(char f);
-		Convert(std::string f);
+		Convert(float f, std::string type);
+		Convert(double f, std::string type);
+		Convert(int f, std::string type);
+		Convert(char f, std::string type);
+		Convert(std::string f, std::string type);
 		Convert( Convert const & src );
 		~Convert();
 
@@ -24,6 +24,8 @@ class Convert
 		float getValuef(void) const;
 		int getValuei(void) const;
 		char getValuec(void) const;
+		std::string getInput(void) const;
+		std::string getType(void) const;
 		operator int(void);
 		operator float(void);
 		operator double(void);

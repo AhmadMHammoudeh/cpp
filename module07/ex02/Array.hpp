@@ -31,9 +31,12 @@ class Array
 			for (int i = 0; i < sizer; i++)
 				arr[i] = rhs.arr[i];
 		};
-		T &operator[](int i) { 
+		T &operator[](int i) {
+			// std::cout << i << std::endl;
 			if (i < 0 || i >= sizer)
-				throw std::runtime_error("Wrong Size");
+			{
+					throw std::runtime_error("Wrong Index");
+			}
 			return (arr[i]); };
 		~Array(){
 			if (sizer)

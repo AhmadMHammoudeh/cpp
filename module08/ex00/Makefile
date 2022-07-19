@@ -6,7 +6,7 @@
 #    By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/24 13:49:50 by ahhammou          #+#    #+#              #
-#    Updated: 2022/07/11 20:40:46 by ahhammou         ###   ########.fr        #
+#    Updated: 2022/07/18 13:31:37 by ahhammou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ else
 endif
 
 $(NAME): ${OBJS}
-	${C++} ${FLAGS} $(OBJS) -o $(NAME)
+	${C++} ${CXXFLAGS} $(OBJS) -o $(NAME)
 
 all: $(NAME)
     

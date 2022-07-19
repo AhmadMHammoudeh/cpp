@@ -6,7 +6,7 @@
 /*   By: ahhammou <ahhammou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:10:29 by ahhammou          #+#    #+#             */
-/*   Updated: 2022/07/06 19:58:02 by ahhammou         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:06:38 by ahhammou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main()
 	// j.execute(b);
 	// RobotomyRequestForm d= RobotomyRequestForm("New");
 	// d.execute(b);
+
 	try
 	{
 		Intern i;
@@ -49,8 +50,9 @@ int main()
 		a->signForm(*n);
 		n->beSigned(b);
 		n->execute(b);
-		delete (n);
+		b.executeForm(*n);
 		}
+		delete (n);
 	}
 	catch(std::exception &e)
 	{

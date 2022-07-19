@@ -11,6 +11,10 @@ Form::Form(): grade_exec(0), grade_sign(0), name("unnammed"), sign(0)
 Form::Form(const char *n, int e, int s): grade_exec(e), grade_sign(s), name(n), sign(0)
 {
 	std::cout << RED" The Constructor with Params is Called" RESET<< std::endl;
+	if (grade_exec < 1 || grade_sign < 1)
+		throw(GradeTooHighException());
+	if (grade_exec > 150 || grade_sign > 150)
+		throw(GradeTooLowException());
 }
 
 Form::Form( const Form & src ): grade_exec(src.getGradeExec()), grade_sign(src.getGradeSign()), name(src.getName()), sign(src.getSign())
